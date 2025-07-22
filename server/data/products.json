@@ -1,0 +1,203 @@
+[
+    {
+      "id": 1,
+      "name": "Wireless Mouse",
+      "description": "High quality wireless mouse for everyday use.",
+      "price": 19815,
+      "category": "Clothing",
+      "inStock": true,
+      "rating": 4.4,
+      "image": "wireless_mouse.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Bluetooth Headphones",
+      "description": "High quality bluetooth headphones for everyday use.",
+      "price": 14587,
+      "category": "Toys",
+      "inStock": true,
+      "rating": 4.4,
+      "image": "bluetooth_headphones.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Coffee Mug",
+      "description": "High quality coffee mug for everyday use.",
+      "price": 17005,
+      "category": "Electronics",
+      "inStock": true,
+      "rating": 4.2,
+      "image": "coffee_mug.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Notebook",
+      "description": "High quality notebook for everyday use.",
+      "price": 27754,
+      "category": "Sports",
+      "inStock": false,
+      "rating": 4.5,
+      "image": "notebook.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Running Shoes",
+      "description": "High quality running shoes for everyday use.",
+      "price": 11206,
+      "category": "Electronics",
+      "inStock": false,
+      "rating": 4.5,
+      "image": "running_shoes.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Smartphone",
+      "description": "High quality smartphone for everyday use.",
+      "price": 11269,
+      "category": "Electronics",
+      "inStock": true,
+      "rating": 4.3,
+      "image": "smartphone.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Backpack",
+      "description": "High quality backpack for everyday use.",
+      "price": 16145,
+      "category": "Toys",
+      "inStock": false,
+      "rating": 4.6,
+      "image": "backpack.jpg"
+    },
+    {
+      "id": 8,
+      "name": "LED Lamp",
+      "description": "High quality led lamp for everyday use.",
+      "price": 5896,
+      "category": "Toys",
+      "inStock": false,
+      "rating": 4.9,
+      "image": "led_lamp.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Water Bottle",
+      "description": "High quality water bottle for everyday use.",
+      "price": 6947,
+      "category": "Sports",
+      "inStock": false,
+      "rating": 4.4,
+      "image": "water_bottle.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Sunglasses",
+      "description": "High quality sunglasses for everyday use.",
+      "price": 23707,
+      "category": "Books",
+      "inStock": false,
+      "rating": 4.0,
+      "image": "sunglasses.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Board Game",
+      "description": "High quality board game for everyday use.",
+      "price": 26852,
+      "category": "Home",
+      "inStock": false,
+      "rating": 4.7,
+      "image": "board_game.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Yoga Mat",
+      "description": "High quality yoga mat for everyday use.",
+      "price": 20164,
+      "category": "Stationery",
+      "inStock": false,
+      "rating": 4.8,
+      "image": "yoga_mat.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Mechanical Keyboard",
+      "description": "High quality mechanical keyboard for everyday use.",
+      "price": 17770,
+      "category": "Electronics",
+      "inStock": true,
+      "rating": 4.5,
+      "image": "mechanical_keyboard.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Wireless Charger",
+      "description": "High quality wireless charger for everyday use.",
+      "price": 28543,
+      "category": "Sports",
+      "inStock": false,
+      "rating": 3.6,
+      "image": "wireless_charger.jpg"
+    },
+    {
+      "id": 15,
+      "name": "T-Shirt",
+      "description": "High quality t-shirt for everyday use.",
+      "price": 8381,
+      "category": "Clothing",
+      "inStock": true,
+      "rating": 3.7,
+      "image": "t-shirt.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Jeans",
+      "description": "High quality jeans for everyday use.",
+      "price": 15758,
+      "category": "Books",
+      "inStock": false,
+      "rating": 4.6,
+      "image": "jeans.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Wall Clock",
+      "description": "High quality wall clock for everyday use.",
+      "price": 1407,
+      "category": "Toys",
+      "inStock": true,
+      "rating": 4.4,
+      "image": "wall_clock.jpg"
+    },
+    {
+      "id": 18,
+      "name": "Earbuds",
+      "description": "High quality earbuds for everyday use.",
+      "price": 24716,
+      "category": "Electronics",
+      "inStock": false,
+      "rating": 4.0,
+      "image": "earbuds.jpg"
+    },
+    {
+      "id": 19,
+      "name": "Power Bank",
+      "description": "High quality power bank for everyday use.",
+      "price": 19087,
+      "category": "Electronics",
+      "inStock": false,
+      "rating": 3.9,
+      "image": "power_bank.jpg"
+    },
+    {
+      "id": 20,
+      "name": "Sketchbook",
+      "description": "High quality sketchbook for everyday use.",
+      "price": 11266,
+      "category": "Toys",
+      "inStock": true,
+      "rating": 4.9,
+      "image": "sketchbook.jpg"
+    }
+  ]
+  
