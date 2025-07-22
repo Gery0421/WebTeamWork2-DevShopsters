@@ -198,23 +198,5 @@
     "inStock": true,
     "rating": 4.9,
     "image": "sketchbook.jpg"
-  },
-  {
-    "name": "Cap",
-    "price": 9327,
-    "inStock": true,
-    "id": 21
-  },
-  {
-    "name": "Cap",
-    "price": 9327,
-    "inStock": true,
-    "id": 22
-  },
-  {
-    "id": 23,
-    "name": "Cap",
-    "price": 9327,
-    "inStock": true
   }
 ]
