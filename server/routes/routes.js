@@ -8,5 +8,4 @@ router.post('/', addNewProduct);
 router.delete('/:id', deleteProduct);
 router.patch('/:id', editProduct);
 
-
 export default router;

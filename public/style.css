@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+  padding: 1rem;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #333;
+}
+
+#container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+#product-list {
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+article {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-size: 0.9rem;
+}
+
+article:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+}
+
+article h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+article p {
+  margin-bottom: 0.3rem;
+  color: #555;
+}
+
+button {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  background-color: #1f7a8c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.2s ease;
+  margin-top: 0.6rem;
+}
+
+button:hover {
+  background-color: #155f6d;
+}
+
+  @media (max-width: 600px) {
+    body {
+      padding: 0.5rem;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    article {
+      padding: 0.8rem;
+    }
+  
+    button {
+      font-size: 0.9rem;
+      width: 100%;
+    }
+  }
+  
