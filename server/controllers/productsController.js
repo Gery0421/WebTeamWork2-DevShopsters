@@ -65,3 +65,27 @@ export async function deleteProduct(req, res) {
       res.status(500).json({ error: 'Failed to delete product' });
     }
 }
+
+export async function editProduct(req, res) {
+    try {
+    const id = req.params.id;
+
+    const data = await fs.readFile(dataPath, 'utf-8');
+    const products = await JSON.parse(data);
+    const productId = products.findIndex(product => product.id === id);
+    const updatedProduct = {...products[productId + 1], ...req.body};
+
+    console.log(products[productId + 1]);
+
+    products[productId + 1] = updatedProduct;
+
+    await fs.writeFile(dataPath, JSON.stringify(products, null, 2));
+
+    res.status(200).json({
+        message: 'Product updated',
+        updatedProduct
+    });
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to update product!'})
+    }
+}
