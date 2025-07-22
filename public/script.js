@@ -1,4 +1,5 @@
 const apiPath = '/api/products'
+let cart = [];
 
 async function fetchData(apiPath) {
     try {
@@ -37,20 +38,58 @@ function renderProducts(products) {
         
         const available = document.createElement("p");
         available.textContent = product.inStock ? '✅ Available' : '❌ Not available';
-        
-        const button = document.createElement('button');
-        button.innerText = 'Add to cart';
 
-        article.append(name, description, price, category, rating, available, button);
+        article.append(name, description, price, category, rating, available);
         productList.appendChild(article);
     });
 }
 
+function addCartButtons(products) {
+    const articles = document.querySelectorAll('#product-list article');
+  
+    articles.forEach((article, index) => {
+      const product = products[index];
+  
+      const button = document.createElement('button');
+      button.textContent = 'Add to cart';
+  
+      button.addEventListener('click', () => {
+        cart.push(product);
+        renderCart();
+      });
+  
+      article.appendChild(button);
+    });
+}
+
+function renderCart() {
+    const cartList = document.getElementById('cart-items');
+    cartList.innerHTML = '';
+  
+    cart.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = `${item.name} – ${item.price} HUF`;
+      cartList.appendChild(li);
+    });
+  }
+  
+  
+
+function addToCart() {
+    const button = document.getElementById('add-button');
+    const cart = document.getElementById('cart');
+
+    button.addEventListener('click', (event) => {
+        cart.appendChild(event.target)
+    })
+}
+
 async function main() {
-const products = await fetchData(apiPath)
+const products = await fetchData(apiPath);
 
 renderProducts(products);
+addCartButtons(products);
     
 }
 
-window.addEventListener("load", main)
+window.addEventListener("load", main);
