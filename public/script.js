@@ -8,7 +8,7 @@ async function fetchData(apiPath) {
         if (!response.ok) {
             console.log('Something wrong', response.status);
         }
-        console.log(data);
+        // console.log(data);
         return data;
     } catch (error) {
         console.log('Something wrong: ', error.message)
@@ -54,26 +54,28 @@ function addCartButtons(products) {
       button.textContent = 'Add to cart';
   
       button.addEventListener('click', () => {
+        const cartSum = 0;
         cart.push(product);
-        renderCart();
+        renderCart(cartSum);
       });
   
       article.appendChild(button);
     });
 }
 
-function renderCart() {
+function renderCart(cartSum) {
     const cartList = document.getElementById('cart-items');
     cartList.innerHTML = '';
   
     cart.forEach(item => {
-      const li = document.createElement('li');
-      li.textContent = `${item.name} – ${item.price} HUF`;
-      cartList.appendChild(li);
+        const li = document.createElement('li');
+        li.textContent = `${item.name} – ${item.price} HUF`;
+        cartList.appendChild(li);
+        cartSum += item.price;
     });
-  }
-  
-  
+
+    document.getElementById('cart-sum').textContent = cartSum;
+}
 
 function addToCart() {
     const button = document.getElementById('add-button');
