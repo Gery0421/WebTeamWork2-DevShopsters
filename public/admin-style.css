@@ -1,0 +1,91 @@
+/* Style for the container of each product entry */
+.product-entry {
+  display: flex; /* Use flexbox for easy alignment */
+  align-items: center; /* Vertically center items */
+  justify-content: space-between; /* Pushes text to left, button to right, or adjust as needed */
+  margin-bottom: 8px; /* Space between product entries */
+  padding: 5px 0; /* Some padding */
+  border-bottom: 1px solid #eee; /* Visual separation */
+}
+
+/* Style for the product details text */
+.product-details {
+  flex-grow: 1; /* Allows the text to take up available space */
+  margin-right: 15px; /* Space between text and button */
+  font-size: 1.1em;
+}
+
+/* Style for the delete button */
+.product-delete-btn {
+  background-color: #dc3545; /* Red for delete */
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.product-delete-btn:hover {
+  background-color: #c82333;
+}
+/* Style for the edit button */
+.product-edit-button {
+  background-color: #1fb93b; /* Green for delete */
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+.product-edit-btn:hover {
+  background-color: #19d542;
+}
+/* Optional: Style for the main product list container */
+#product-list {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Style for the product form container */
+#add-product-form {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Style for the form inputs */
+#add-product-form input {
+  padding: 8px 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline-color: #1fb93b; /* zöld fókusz */
+}
+
+/* Style for the submit button */
+#add-product-form button {
+  align-self: flex-start;
+  padding: 8px 16px;
+  font-size: 1em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#add-product-form button:hover {
+  background-color: #0056b3;
+}

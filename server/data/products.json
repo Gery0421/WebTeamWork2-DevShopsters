@@ -198,5 +198,15 @@
     "inStock": true,
     "rating": 4.9,
     "image": "sketchbook.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Test-1",
+    "description": "test",
+    "price": 10000,
+    "category": "Test-1",
+    "stock": 1,
+    "image": "test.img",
+    "active": true
   }
 ]
