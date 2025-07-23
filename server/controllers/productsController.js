@@ -25,9 +25,9 @@ export async function addNewProduct(req, res) {
         const newId = products[products.length-1].id + 1;
         const newProduct = { id: newId, ...req.body };
 
-        if (!newProduct.name || !newProduct.price || !newProduct.inStock) {
+  /*       if (!newProduct.name || !newProduct.price || !newProduct.inStock) {
             return res.status(400).json({ error: 'Name, Price and inStock are required!'});
-        }
+        } */
 
 
         products.push(newProduct);
@@ -44,12 +44,12 @@ export async function addNewProduct(req, res) {
 
 export async function deleteProduct(req, res) {
     try {
-    const index = req.params.id;
+    const index = parseInt(req.params.id);
     const data = await fs.readFile(dataPath, 'utf-8');
     const products = await JSON.parse(data);
-    const productId = products.findIndex(product => product.id === index);
+    const productId = products.findIndex(product => parseInt(product.id) === index);
 
-    if (productId + 1) {
+    if (productId === -1) {
         return res.status(404).json({ error: 'Product not found' });
     }
 
@@ -88,4 +88,47 @@ export async function editProduct(req, res) {
     } catch (error) {
         res.status(500).json({ error: 'Failed to update product!'})
     }
+}
+
+export async function replaceProductById(req, res) {
+  const id = parseInt(req.params.id)
+  const updatedProduct = req.body;
+
+    
+  if (!updatedProduct.name || !updatedProduct.price) {
+    return res.status(400).json({ message: 'Name and price is mandatory!' });
+  }
+
+  try {
+    const data = await fs.readFile(dataPath, 'utf-8');
+    const products = JSON.parse(data);
+    console.log();
+    
+    const index = products.findIndex(p => p.id === parseInt(req.params.id));
+    console.log(index);
+    
+    if (index === -1) {
+      return res.status(404).json({ message: 'There is no such an id product' });
+    }
+
+    
+    const newProduct = {
+      id,
+      name: updatedProduct.name,
+      description: updatedProduct.description || '',
+      price: updatedProduct.price,
+      category: updatedProduct.category || '',
+      stock: updatedProduct.stock ?? 0,
+      image: updatedProduct.image || '',
+      active: updatedProduct.active
+    };
+     console.log(newProduct);
+    products[index] = newProduct;
+   
+    
+    await fs.writeFile(dataPath, JSON.stringify(products, null, 2), 'utf-8');
+    res.json(newProduct);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 }
