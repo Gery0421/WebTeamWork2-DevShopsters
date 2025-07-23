@@ -1,5 +1,12 @@
 const apiPath = '/api/products'
 let cart = [];
+let data = sessionStorage.getItem('cart');
+
+console.log(data);
+
+if (data) {
+    cart = JSON.parse(data);
+}
 
 async function fetchData(apiPath) {
     try {
@@ -55,6 +62,7 @@ function addCartButtons(products) {
   
       button.addEventListener('click', () => {
         cart.push(product);
+        sessionStorage.setItem('cart', JSON.stringify(cart));
         renderCart();
       });
   
@@ -65,15 +73,13 @@ function addCartButtons(products) {
 function renderCart() {
     const cartList = document.getElementById('cart-items');
     cartList.innerHTML = '';
-  
+
     cart.forEach(item => {
       const li = document.createElement('li');
       li.textContent = `${item.name} – ${item.price} HUF`;
       cartList.appendChild(li);
     });
   }
-  
-  
 
 function addToCart() {
     const button = document.getElementById('add-button');
@@ -89,6 +95,7 @@ const products = await fetchData(apiPath);
 
 renderProducts(products);
 addCartButtons(products);
+renderCart();
     
 }
 
