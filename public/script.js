@@ -61,19 +61,19 @@ function addCartButtons(products) {
       button.textContent = 'Add to cart';
   
       button.addEventListener('click', () => {
-        const cartSum = 0;
         cart.push(product);
         sessionStorage.setItem('cart', JSON.stringify(cart));
-        renderCart(cartSum);
+        renderCart();
       });
   
       article.appendChild(button);
     });
 }
 
-function renderCart(cartSum) {
+function renderCart() {
     const cartList = document.getElementById('cart-items');
     cartList.innerHTML = '';
+    let cartSum = 0;
 
     cart.forEach(item => {
         const li = document.createElement('li');
