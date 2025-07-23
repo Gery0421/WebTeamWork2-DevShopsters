@@ -4,10 +4,6 @@ let data = sessionStorage.getItem('cart');
 
 console.log(data);
 
-if (data) {
-    cart = JSON.parse(data);
-}
-
 async function fetchData(apiPath) {
     try {
         const response = await fetch(apiPath)
@@ -56,6 +52,10 @@ function addCartButtons(products) {
   
     articles.forEach((article, index) => {
       const product = products[index];
+
+      if (data) {
+        cart = JSON.parse(data);
+    }
   
       const button = document.createElement('button');
       button.textContent = 'Add to cart';
