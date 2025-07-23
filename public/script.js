@@ -1,5 +1,12 @@
 const apiPath = '/api/products'
 let cart = [];
+let data = sessionStorage.getItem('cart');
+
+console.log(data);
+
+if (data) {
+    cart = JSON.parse(data);
+}
 
 async function fetchData(apiPath) {
     try {
@@ -56,6 +63,7 @@ function addCartButtons(products) {
       button.addEventListener('click', () => {
         const cartSum = 0;
         cart.push(product);
+        sessionStorage.setItem('cart', JSON.stringify(cart));
         renderCart(cartSum);
       });
   
@@ -66,7 +74,7 @@ function addCartButtons(products) {
 function renderCart(cartSum) {
     const cartList = document.getElementById('cart-items');
     cartList.innerHTML = '';
-  
+
     cart.forEach(item => {
         const li = document.createElement('li');
         li.textContent = `${item.name} – ${item.price} HUF`;
@@ -91,6 +99,7 @@ const products = await fetchData(apiPath);
 
 renderProducts(products);
 addCartButtons(products);
+renderCart();
     
 }
 
