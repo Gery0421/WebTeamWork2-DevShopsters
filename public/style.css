@@ -85,6 +85,72 @@ button:hover {
   background-color: #155f6d;
 }
 
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 90%;
+  max-width: 400px;
+  padding: 2rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.modal .flex {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal h3 {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+}
+
+.close-button,
+.x-close {
+  background-color: #1f7a8c;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.close-button:hover,
+.x-close:hover {
+  background-color: #155f6d;
+  ;
+}
+
+.close-button {
+  margin-top: 1rem;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: 5;
+}
+
+.hidden {
+  display: none;
+}
+
   @media (max-width: 600px) {
     body {
       padding: 0.5rem;
