@@ -200,13 +200,13 @@
     "image": "sketchbook.jpg"
   },
   {
-    "id": 21,
-    "name": "Test-1",
-    "description": "test",
-    "price": 10000,
-    "category": "Test-1",
+    "id": 22,
+    "name": "water",
+    "description": "drink it!",
+    "price": 9999999999,
+    "category": "High",
     "stock": 1,
-    "image": "test.img",
+    "image": "aa",
     "active": true
   }
 ]
