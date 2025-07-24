@@ -39,6 +39,7 @@ function renderProducts(products) {
         rating.textContent = `Rating: ${product.rating}`;
         
         const available = document.createElement("p");
+        available.classList.add("available");
         available.textContent = product.inStock ? '✅ Available' : '❌ Not available';
 
         article.append(name, description, price, category, rating, available);
@@ -49,27 +50,34 @@ function renderProducts(products) {
 function addCartButtons(products) {
     const articles = document.querySelectorAll('#product-list article');
   
+    const storedCart = sessionStorage.getItem('cart');
+    if (storedCart) {
+      cart = JSON.parse(storedCart);
+    }
+  
     articles.forEach((article, index) => {
       const product = products[index];
-
-      if (data) {
-        cart = JSON.parse(data);
-    }
   
       const button = document.createElement('button');
       button.textContent = 'Add to cart';
   
-      button.addEventListener('click', () => {
-        cart.push(product);
-        sessionStorage.setItem('cart', JSON.stringify(cart));
-        renderCart();
+      button.addEventListener('click', (event) => {
+        const availability = article.querySelector('.available');
+  
+        if (availability && availability.textContent.includes('Available')) {
+          cart.push(product);
+          sessionStorage.setItem('cart', JSON.stringify(cart));
+          updateCartDisplay();
+        } else {
+          alert('This product is not available.');
+        }
       });
   
       article.appendChild(button);
     });
-}
+  }  
 
-function renderCart() {
+function updateCartDisplay() {
     const cartList = document.getElementById('cart-items');
     cartList.innerHTML = '';
     let cartSum = 0;
@@ -84,20 +92,11 @@ function renderCart() {
     document.getElementById('cart-sum').textContent = cartSum;
 }
 
-function addToCart() {
-    const button = document.getElementById('add-button');
-    const cart = document.getElementById('cart');
-
-    button.addEventListener('click', (event) => {
-        cart.appendChild(event.target)
-    })
-}
-
 function removeFromCart(){
     const button = document.getElementById('clear-btn');
     button.addEventListener('click', () => {
         cart = [];
-        renderCart();
+        updateCartDisplay();
         sessionStorage.clear();
         sessionStorage.setItem('cart', JSON.stringify(cart));
     });
@@ -108,7 +107,7 @@ const products = await fetchData(apiPath);
 
 renderProducts(products);
 addCartButtons(products);
-renderCart();
+updateCartDisplay();
 removeFromCart();
 
 }
