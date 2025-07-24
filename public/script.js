@@ -96,9 +96,8 @@ function removeFromCart(){
     const button = document.getElementById('clear-btn');
     button.addEventListener('click', () => {
         cart = [];
-<<<<<<< HEAD
         sessionStorage.clear();
-        renderCart();
+        updateCartDisplay();
     });
 }
 function checkoutCart(){
@@ -107,28 +106,13 @@ function checkoutCart(){
         window.location.href = 'checkout.html';
     })
 }
-=======
-        updateCartDisplay();
-        sessionStorage.clear();
-        sessionStorage.setItem('cart', JSON.stringify(cart));
-    });
-}
-
->>>>>>> 17eae345dd7ebd9078992ef6ccb70c8d445cbd60
 async function main() {
 const products = await fetchData(apiPath);
 
 renderProducts(products);
 addCartButtons(products);
-<<<<<<< HEAD
-renderCart();
 removeFromCart();   
 checkoutCart(); 
-=======
-updateCartDisplay();
-removeFromCart();
-
->>>>>>> 17eae345dd7ebd9078992ef6ccb70c8d445cbd60
 }
 
 window.addEventListener("load", main);

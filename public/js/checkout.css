@@ -1,0 +1,67 @@
+/* Alap stílusok */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 2rem;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* Konténer, ahol a termékek vannak */
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Egy-egy termék megjelenése */
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 280px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.product:hover {
+    transform: translateY(-4px);
+}
+
+/* Cím */
+.product h2 {
+    font-size: 1.4rem;
+    color: #222;
+    margin-bottom: 0.5rem;
+}
+
+/* Szöveges mezők */
+.product p {
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+}
+
+/* Elérhetőség színezés */
+.in-stock {
+    color: green;
+    font-weight: bold;
+}
+
+.out-of-stock {
+    color: red;
+    font-weight: bold;
+}
+
+/* Mobilbarát */
+@media (max-width: 600px) {
+    #container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        width: 90%;
+    }
+}
