@@ -11,7 +11,6 @@ async function fetchData(apiPath) {
         if (!response.ok) {
             console.log('Something wrong', response.status);
         }
-        // console.log(data);
         return data;
     } catch (error) {
         console.log('Something wrong: ', error.message)
@@ -94,13 +93,24 @@ function addToCart() {
     })
 }
 
+function removeFromCart(){
+    const button = document.getElementById('clear-btn');
+    button.addEventListener('click', () => {
+        cart = [];
+        renderCart();
+        sessionStorage.clear();
+        sessionStorage.setItem('cart', JSON.stringify(cart));
+    });
+}
+
 async function main() {
 const products = await fetchData(apiPath);
 
 renderProducts(products);
 addCartButtons(products);
 renderCart();
-    
+removeFromCart();
+
 }
 
 window.addEventListener("load", main);
