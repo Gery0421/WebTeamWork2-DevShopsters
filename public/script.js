@@ -94,12 +94,17 @@ function addToCart() {
 }
 function removeFromCart(){
     const button = document.getElementById('clear-btn');
-    const cartList = document.getElementById('cart-items');
-    const cartSum = document.getElementById('cart-sum');
     button.addEventListener('click', () => {
-        const cart = document.getElementById('cart-box');
-        cart.removeChild(cartList, cartSum);
+        cart = [];
+        sessionStorage.clear();
+        renderCart();
     });
+}
+function checkoutCart(){
+    const button = document.getElementById('checkout-btn');
+    button.addEventListener('click', () => {
+        window.location.href = 'checkout.html';
+    })
 }
 async function main() {
 const products = await fetchData(apiPath);
@@ -107,7 +112,8 @@ const products = await fetchData(apiPath);
 renderProducts(products);
 addCartButtons(products);
 renderCart();
-removeFromCart();    
+removeFromCart();   
+checkoutCart(); 
 }
 
 window.addEventListener("load", main);

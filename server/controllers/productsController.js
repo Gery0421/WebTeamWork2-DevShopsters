@@ -89,7 +89,6 @@ export async function editProduct(req, res) {
         res.status(500).json({ error: 'Failed to update product!'})
     }
 }
-
 export async function replaceProductById(req, res) {
   const id = parseInt(req.params.id)
   const updatedProduct = req.body;
