@@ -7,10 +7,11 @@ console.log(data);
 async function fetchData(apiPath) {
     try {
         const response = await fetch(apiPath)
-        const data = await response.json();
         if (!response.ok) {
             console.log('Something wrong', response.status);
+            return [];
         }
+        const data = await response.json();
         return data;
     } catch (error) {
         console.log('Something wrong: ', error.message)
@@ -96,39 +97,25 @@ function removeFromCart(){
     const button = document.getElementById('clear-btn');
     button.addEventListener('click', () => {
         cart = [];
-<<<<<<< HEAD
         sessionStorage.clear();
-        renderCart();
+        updateCartDisplay()
     });
 }
+
 function checkoutCart(){
     const button = document.getElementById('checkout-btn');
     button.addEventListener('click', () => {
         window.location.href = 'checkout.html';
     })
 }
-=======
-        updateCartDisplay();
-        sessionStorage.clear();
-        sessionStorage.setItem('cart', JSON.stringify(cart));
-    });
-}
 
->>>>>>> 17eae345dd7ebd9078992ef6ccb70c8d445cbd60
 async function main() {
 const products = await fetchData(apiPath);
 
 renderProducts(products);
 addCartButtons(products);
-<<<<<<< HEAD
-renderCart();
 removeFromCart();   
 checkoutCart(); 
-=======
-updateCartDisplay();
-removeFromCart();
-
->>>>>>> 17eae345dd7ebd9078992ef6ccb70c8d445cbd60
 }
 
 window.addEventListener("load", main);
