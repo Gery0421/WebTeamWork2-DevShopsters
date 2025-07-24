@@ -71,7 +71,6 @@ function addCartButtons(products) {
                 updateCartDisplay();
             } else {
                 openModal()
-                //alert('This product is not available.');
             }
         });
         
@@ -82,8 +81,6 @@ function addCartButtons(products) {
 function openModal() {
     const modal = document.querySelector(".modal");
     const overlay = document.querySelector(".overlay");
-    //const openModalBtn = document.querySelector(".btn-open");
-    const closeModalBtn = document.querySelector(".close-button");
 
     modal.classList.remove("hidden");
     overlay.classList.remove("hidden");
