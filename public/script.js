@@ -11,7 +11,6 @@ async function fetchData(apiPath) {
         if (!response.ok) {
             console.log('Something wrong', response.status);
         }
-        // console.log(data);
         return data;
     } catch (error) {
         console.log('Something wrong: ', error.message)
@@ -93,14 +92,22 @@ function addToCart() {
         cart.appendChild(event.target)
     })
 }
-
+function removeFromCart(){
+    const button = document.getElementById('clear-btn');
+    const cartList = document.getElementById('cart-items');
+    const cartSum = document.getElementById('cart-sum');
+    button.addEventListener('click', () => {
+        const cart = document.getElementById('cart-box');
+        cart.removeChild(cartList, cartSum);
+    });
+}
 async function main() {
 const products = await fetchData(apiPath);
 
 renderProducts(products);
 addCartButtons(products);
 renderCart();
-    
+removeFromCart();    
 }
 
 window.addEventListener("load", main);
